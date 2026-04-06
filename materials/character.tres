@@ -1,0 +1,44 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bu21kkeuml0n3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3cvof"]
+load_path = "res://.godot/imported/meow2_0.png-d4c1597a50aab71005a199ed5f6ccfc6.s3tc.ctex"
+
+[sub_resource type="Shader" id="Shader_kfex2"]
+code = "shader_type spatial;
+render_mode unshaded, cull_front;
+
+uniform bool enable = true;
+uniform float outline_thickness = 0.05;
+uniform vec4 color : source_color = vec4(0.0);
+
+
+void vertex() {
+	if (enable==true) {
+	VERTEX += NORMAL*outline_thickness;
+	}
+}
+
+void fragment() {
+	if (enable==true) {
+	ALBEDO = color.rgb;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_73rnh"]
+render_priority = 0
+shader = SubResource("Shader_kfex2")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.05
+shader_parameter/color = Color(1, 0, 0, 1)
+
+[resource]
+resource_name = "material_0"
+next_pass = SubResource("ShaderMaterial_73rnh")
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_3cvof")
+texture_filter = 0
+texture_repeat = false

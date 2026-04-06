@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cxqa4s81ouutw"]
+
+[ext_resource type="Texture2D" uid="uid://dlnx5n4a2jqtv" path="res://models/bus_stop/bus_station_fix_0.png" id="1_ad77t"]
+
+[resource]
+resource_name = "material_0"
+shading_mode = 0
+albedo_texture = ExtResource("1_ad77t")
+texture_filter = 0
+texture_repeat = false

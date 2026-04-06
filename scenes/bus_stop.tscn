@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://633bcupctxv1"]
+
+[ext_resource type="PackedScene" uid="uid://dmq0eysbo3uwj" path="res://scenes/models/bus_stop.tscn" id="1_jt85a"]
+[ext_resource type="Script" uid="uid://mb6hyvbad2h0" path="res://scripts/bus_stop.gd" id="1_nbpj8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nbpj8"]
+size = Vector3(1.3001099, 1.7179565, 1.3235474)
+
+[node name="bus_station" type="Area3D" unique_id=1090984949]
+script = ExtResource("1_nbpj8")
+can_interact = true
+ui_text = "сесть на автобус"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=57552526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82821655, 0.8658142, -0.077423096)
+shape = SubResource("BoxShape3D_nbpj8")
+debug_color = Color(0.90822273, 0.23006886, 0.49609905, 0.41960785)
+
+[node name="blockbench_export" parent="." unique_id=9526072 instance=ExtResource("1_jt85a")]
+
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

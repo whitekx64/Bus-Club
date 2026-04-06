@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d1s1nll44ahi7"]
+
+[ext_resource type="PackedScene" uid="uid://da1gi30b1l06m" path="res://models/Door/door.glb" id="1_p6l1f"]
+
+[node name="blockbench_export" unique_id=309314492 instance=ExtResource("1_p6l1f")]
+
+[node name="mesh" parent="." index="0" unique_id=749073394]
+cast_shadow = 0

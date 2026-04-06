@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cg1spqar6lp45"]
+
+[ext_resource type="Texture2D" uid="uid://boyjio3s3an5f" path="res://models/Door/door_0.png" id="1_qmk12"]
+[ext_resource type="Shader" uid="uid://d1dpjqxnckplv" path="res://materials/outline/outline.tres" id="2_v53q3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v53q3"]
+render_priority = 0
+shader = ExtResource("2_v53q3")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/size = 1.05
+
+[resource]
+resource_name = "material_0"
+next_pass = SubResource("ShaderMaterial_v53q3")
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_qmk12")
+texture_filter = 0
+texture_repeat = false

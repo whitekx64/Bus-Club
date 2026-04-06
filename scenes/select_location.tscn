@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://f2prrvndvs04"]
+
+[ext_resource type="Script" uid="uid://cpn38ia5nok28" path="res://scripts/select_location.gd" id="1_s2h3t"]
+
+[sub_resource type="SystemFont" id="SystemFont_er37s"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_s2h3t"]
+font = SubResource("SystemFont_er37s")
+font_size = 50
+
+[sub_resource type="SystemFont" id="SystemFont_pjq8s"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[node name="Panel" type="Panel" unique_id=4127758]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -700.0
+offset_top = -350.0
+offset_right = 700.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s2h3t")
+
+[node name="Label" type="Label" parent="." unique_id=929421822]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 60.0
+offset_right = 885.0
+offset_bottom = 122.0
+text = "Выбор локации"
+label_settings = SubResource("LabelSettings_s2h3t")
+
+[node name="Button" type="Button" parent="." unique_id=1232255720]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 393.0
+offset_right = 450.0
+offset_bottom = 560.0
+theme_override_fonts/font = SubResource("SystemFont_pjq8s")
+theme_override_font_sizes/font_size = 50
+text = "тест"
+
+[node name="Button2" type="Button" parent="." unique_id=558641354]
+layout_mode = 0
+offset_left = 866.0
+offset_top = 396.0
+offset_right = 1172.0
+offset_bottom = 563.0
+theme_override_fonts/font = SubResource("SystemFont_pjq8s")
+theme_override_font_sizes/font_size = 50
+text = "тест 2"
+
+[connection signal="pressed" from="Button" to="." method="_on_test1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_test2_pressed"]

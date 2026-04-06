@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://bn8fhwycjwkt1"]
+
+[ext_resource type="Script" uid="uid://dbq2866p13oub" path="res://scripts/door.gd" id="1_cemll"]
+[ext_resource type="PackedScene" uid="uid://d1s1nll44ahi7" path="res://models/Door/doormodel.tscn" id="2_uvdjg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l1f6y"]
+size = Vector3(1.4873047, 1.6076355, 1.1052246)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cemll"]
+size = Vector3(0.9980469, 1.6232224, 0.06274414)
+
+[sub_resource type="Animation" id="Animation_cemll"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ebbpo"]
+resource_name = "open"
+length = 0.41666666
+step = 0.041666668
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.02777778, 0, 0.013888888, 0, 0, -0.041666668, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.16666667, 0.25)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(0, -0.24989344, -0.060189255, 0.125, 0.03010746, -2.099082, -0.08292818, -0.16727324, 0.053312004, 0.107534885, -1.8517514, -0.08333331, 0.17205572, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.41666666)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.02777778, 0, 0.013888888, 0, 0, -0.041666668, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.16666667, 0.25)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_txmc5"]
+_data = {
+&"RESET": SubResource("Animation_cemll"),
+&"open": SubResource("Animation_ebbpo")
+}
+
+[node name="door" type="Area3D" unique_id=1362464736]
+script = ExtResource("1_cemll")
+can_interact = true
+ui_text = "открыть дверь"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=677201195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029174805, 0.81422424, 0)
+shape = SubResource("BoxShape3D_l1f6y")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=191495346]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="blockbench_export" parent="Marker3D" unique_id=198020591 instance=ExtResource("2_uvdjg")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.49351695, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Marker3D/blockbench_export" unique_id=729455945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49351695, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Marker3D/blockbench_export/StaticBody3D" unique_id=1266375622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49254042, 0.8138161, 0)
+shape = SubResource("BoxShape3D_cemll")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Marker3D/blockbench_export" unique_id=196348089]
+libraries/ = SubResource("AnimationLibrary_txmc5")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

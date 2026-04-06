@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d2m5yl71thxwv"]
+
+[ext_resource type="PackedScene" uid="uid://dryel320mbbx7" path="res://models/Motya/meow2.glb" id="1_2sfin"]
+
+[node name="blockbench_export" unique_id=171568366 instance=ExtResource("1_2sfin")]
+
+[node name="r_ear" parent="meow/torso/head" parent_id_path=PackedInt32Array(1816520262) index="0" unique_id=16157188]
+transform = Transform3D(0.88978547, 0.4539905, 0.04663168, -0.4533683, 0.8910065, -0.023760028, -0.05233596, 1.8626451e-09, 0.99862957, 0.1, 0.55322623, 0)
+
+[node name="l_ear" parent="meow/torso/head" parent_id_path=PackedInt32Array(1816520262) index="1" unique_id=1830820768]
+transform = Transform3D(0.88978547, -0.4539905, 0.04663168, 0.4533683, 0.8910065, 0.023760028, -0.05233596, -1.8626451e-09, 0.99862957, -0.1, 0.55322623, 0)
+
+[node name="Skeleton3D" parent="meow/torso/tail" parent_id_path=PackedInt32Array(1304917861) index="0" unique_id=1217764023]
+bones/0/rotation = Quaternion(0.45999157, -0.040244047, 0.077308096, 0.8836356)
+bones/1/rotation = Quaternion(-0.23762932, 0.0051850905, 0.021189716, 0.97111094)
+bones/2/rotation = Quaternion(-0.10451764, -0.030464115, -0.27816585, 0.95434374)
+bones/3/rotation = Quaternion(0, 0, 0.27982903, 0.96004987)

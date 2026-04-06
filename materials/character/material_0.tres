@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ci0iejtg5glpc"]
+
+[ext_resource type="Texture2D" uid="uid://bhyqp441g1ky7" path="res://models/Motya/meow2_0.png" id="1_dgewk"]
+[ext_resource type="Shader" uid="uid://c7t8fhl8s5det" path="res://scripts/outline.gdshader" id="2_rttyv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m42yk"]
+render_priority = 0
+shader = ExtResource("2_rttyv")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/size = 1.05
+
+[resource]
+resource_name = "material_0"
+next_pass = SubResource("ShaderMaterial_m42yk")
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_dgewk")
+texture_filter = 0
+texture_repeat = false
