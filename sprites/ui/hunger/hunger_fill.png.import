@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0utk8mpjkolu"
-path="res://.godot/imported/mini_motya.png-20a79809943900141aea62fa08033137.ctex"
+uid="uid://cfvys4grii4hm"
+path="res://.godot/imported/hunger_fill.png-07d9edcbcdeb892f7b7be0e66fec154e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ui/mini_motya.png"
-dest_files=["res://.godot/imported/mini_motya.png-20a79809943900141aea62fa08033137.ctex"]
+source_file="res://sprites/ui/hunger/hunger_fill.png"
+dest_files=["res://.godot/imported/hunger_fill.png-07d9edcbcdeb892f7b7be0e66fec154e.ctex"]
 
 [params]
 

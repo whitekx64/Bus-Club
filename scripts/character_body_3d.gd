@@ -51,6 +51,8 @@ func _input(event):
 		GlobalEvent.player_change_money.emit(100)
 	if event.is_action_released("ui_left"):
 		GlobalEvent.player_change_money.emit(-100)
+	if event.is_action_released("ui_graph_delete"):
+		GlobalEvent.player_change_hunger.emit(10)
 
 func land():
 	slowdown = true
