@@ -3,7 +3,7 @@ extends Node
 var max_hp = 100.0
 var health = 100.0
 var max_stamina = 100.0
-var stamina = 100.0
+var stamina :float = 100.0
 var can_restore_stamina :bool
 
 var money :int = 0

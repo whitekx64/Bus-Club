@@ -16,12 +16,3 @@ func interact():
 	await $Marker3D/blockbench_export/AnimationPlayer.animation_finished
 	$Marker3D/blockbench_export/StaticBody3D/CollisionShape3D.disabled = false
 	can_interact = true
-
-
-#func _on_area_entered(_area: Area3D) -> void:
-#	material.next_pass.shader = null
-#	print("meow")
-
-#func _on_area_exited(_area: Area3D) -> void:
-#	material.next_pass.shader = dup_outline
-#	print("meow")

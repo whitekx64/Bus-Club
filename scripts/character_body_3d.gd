@@ -44,9 +44,13 @@ func _input(event):
 
 # Дебаг
 	if event.is_action_released("ui_up"):
+		GlobalEvent.player_change_hp.emit(5)
+	if event.is_action_released("ui_down"):
 		GlobalEvent.player_change_hp.emit(-5)
 	if event.is_action_released("ui_right"):
 		GlobalEvent.player_change_money.emit(100)
+	if event.is_action_released("ui_left"):
+		GlobalEvent.player_change_money.emit(-100)
 
 func land():
 	slowdown = true
@@ -86,9 +90,11 @@ func _physics_process(delta):
 	var slow_mode = 0.5 if slowdown else 1.0
 	var sprint_mode
 	if Input.is_action_pressed("sprint"):
-		if horisontal_speed >= 1:
+		if horisontal_speed >= 1 and GameState.stamina > 0:
 			GlobalEvent.player_change_stamina.emit(-5 * delta)
-		sprint_mode = 2.0
+			sprint_mode = 2.0
+		else:
+			sprint_mode = 1.0
 	else:
 		sprint_mode = 1.0
 	GameState.can_restore_stamina = false if Input.is_action_pressed("sprint") else true

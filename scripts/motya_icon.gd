@@ -1,5 +1,6 @@
 extends Control
 
+var tween :Tween
 
 func _ready() -> void:
 	hp_sync()
@@ -14,9 +15,17 @@ func hp_sync():
 	else:
 		$AnimatedSprite2D.set_animation("medium")
 
-func _on_hp_changed(_amount):
+func _on_hp_changed(amount):
 	hp_sync()
-
+	if tween:
+		tween.kill()
+	tween = create_tween()
+	if amount <= 0:
+		tween.tween_property($AnimatedSprite2D, "scale", Vector2(0.95, 0.95), 0.1)
+		tween.tween_property($AnimatedSprite2D, "scale", Vector2(1.0, 1.0), 0.1)
+	else:
+		tween.tween_property($AnimatedSprite2D, "scale", Vector2(1.05, 1.05), 0.1)
+		tween.tween_property($AnimatedSprite2D, "scale", Vector2(1.0, 1.0), 0.1)
 
 func _on_timer_timeout() -> void:
 	$AnimatedSprite2D.play()
