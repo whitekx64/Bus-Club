@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0utk8mpjkolu"
-path="res://.godot/imported/mini_motya.png-f3dd999ad4d84d205504c4e59ce6fb26.ctex"
+path="res://.godot/imported/mini_motya.png-20a79809943900141aea62fa08033137.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/mini_motya.png"
-dest_files=["res://.godot/imported/mini_motya.png-f3dd999ad4d84d205504c4e59ce6fb26.ctex"]
+source_file="res://sprites/ui/mini_motya.png"
+dest_files=["res://.godot/imported/mini_motya.png-20a79809943900141aea62fa08033137.ctex"]
 
 [params]
 

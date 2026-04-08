@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://reh6vr52fip5"]
+
+[ext_resource type="Script" uid="uid://cff4kxprcktsy" path="res://scripts/ui_back.gd" id="1_cehss"]
+[ext_resource type="Texture2D" uid="uid://bg7busuyw5l8k" path="res://sprites/ui/ui_back.png" id="1_dbnun"]
+[ext_resource type="PackedScene" uid="uid://b3c6l5ynae8y5" path="res://scenes/stamina_progress_bar.tscn" id="2_37kcv"]
+[ext_resource type="PackedScene" uid="uid://cxyvuq4r6ve46" path="res://scenes/money_label.tscn" id="3_37kcv"]
+
+[node name="stats" type="Control" unique_id=184143396]
+layout_mode = 3
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cehss")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=234353472]
+scale = Vector2(5, 5)
+texture = ExtResource("1_dbnun")
+
+[node name="stamina_bar" parent="." unique_id=703200691 instance=ExtResource("2_37kcv")]
+layout_mode = 0
+offset_left = -32.0
+offset_top = 2.0
+offset_right = 32.0
+offset_bottom = 14.0
+scale = Vector2(4, 4)
+pivot_offset = Vector2(32, 6)
+
+[node name="money_label" parent="." unique_id=1564711970 instance=ExtResource("3_37kcv")]
+layout_mode = 0
+offset_top = 77.99999
+offset_bottom = 77.99999
+scale = Vector2(0.7, 0.7)

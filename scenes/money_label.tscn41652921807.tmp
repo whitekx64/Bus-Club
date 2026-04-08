@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cxyvuq4r6ve46"]
+
+[ext_resource type="Script" uid="uid://d2ygt1j2xx822" path="res://scripts/money_label.gd" id="1_5kkta"]
+[ext_resource type="Texture2D" uid="uid://b5xu0mvhgpdj6" path="res://sprites/ui/money_ui.png" id="2_cjnc7"]
+[ext_resource type="FontFile" uid="uid://bcdwvuxyss8wr" path="res://fonts/PressStart2P-Regular.ttf" id="3_6ll32"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3dlbg"]
+font = ExtResource("3_6ll32")
+font_size = 24
+font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
+shadow_color = Color(0.23509577, 0.4291934, 0.105985604, 1)
+
+[node name="money_label" type="Control" unique_id=1564711970]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5kkta")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=332760946]
+scale = Vector2(4, 4)
+texture = ExtResource("2_cjnc7")
+
+[node name="Label" type="Label" parent="." unique_id=2093001533]
+layout_mode = 0
+offset_left = -51.0
+offset_top = -3.0
+offset_right = 93.0
+offset_bottom = 21.0
+text = "100000"
+label_settings = SubResource("LabelSettings_3dlbg")

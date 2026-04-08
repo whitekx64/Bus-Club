@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qxxfxlwmlq2b"]
 
-[ext_resource type="Texture2D" uid="uid://0utk8mpjkolu" path="res://sprites/mini_motya.png" id="1_ierja"]
+[ext_resource type="Texture2D" uid="uid://0utk8mpjkolu" path="res://sprites/ui/mini_motya.png" id="1_ierja"]
+[ext_resource type="Script" uid="uid://b7ipqq0i4pe7o" path="res://scripts/motya_icon.gd" id="2_kpxop"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpxop"]
 atlas = ExtResource("1_ierja")
@@ -100,9 +101,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wxh55")
 }],
-"loop": true,
+"loop": false,
 "name": &"low",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -120,9 +121,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7mg2p")
 }],
-"loop": true,
+"loop": false,
 "name": &"medium",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="Animation" id="Animation_wn6bw"]
@@ -184,11 +185,21 @@ _data = {
 &"idle": SubResource("Animation_ot4li")
 }
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=100009861]
+[node name="motya_icon" type="Control" unique_id=450728177]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2_kpxop")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=100009861]
 sprite_frames = SubResource("SpriteFrames_bq3ss")
-animation = &"high"
-frame = 4
-frame_progress = 1.0
+animation = &"medium"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1462520194]
+root_node = NodePath("../AnimatedSprite2D")
 libraries/ = SubResource("AnimationLibrary_l4alv")
+
+[node name="Timer" type="Timer" parent="." unique_id=1556089361]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
