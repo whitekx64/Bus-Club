@@ -9,3 +9,7 @@ This repository isn't meant for learning GDScript, so please don't use it as an 
 
 
 ![Скриншот](https://docs.google.com/uc?export=download&id=1Am4j71MLMnywixWbQQwUxa_X3pKJfr4G)
+
+![Скриншот](https://docs.google.com/uc?export=download&id=1if22TP0rwDKTICN_0VkznIOmAmGiVzNe)
+
+![Скриншот](https://docs.google.com/uc?export=download&id=1tNShMD1gjxMmNtC227bcYnHlO3sYxiDn)
