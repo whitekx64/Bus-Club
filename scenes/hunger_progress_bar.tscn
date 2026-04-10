@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dn8d1lvyc61oc"]
+
+[ext_resource type="Texture2D" uid="uid://cn1gpcu3dbj0b" path="res://sprites/ui/hunger/hunger_back.png" id="1_ls13r"]
+[ext_resource type="Texture2D" uid="uid://ba58b4a2c3dr0" path="res://sprites/ui/hunger/hunger_outline.png" id="2_jll8d"]
+[ext_resource type="Texture2D" uid="uid://cfvys4grii4hm" path="res://sprites/ui/hunger/hunger_fill.png" id="3_y2ftd"]
+[ext_resource type="Script" uid="uid://600ko7utib1e" path="res://scripts/hunger_progress_bar.gd" id="4_jll8d"]
+
+[node name="HungerProgressBar" type="TextureProgressBar" unique_id=784106447]
+offset_right = 32.0
+offset_bottom = 32.0
+fill_mode = 4
+radial_center_offset = Vector2(0, 2)
+texture_under = ExtResource("1_ls13r")
+texture_over = ExtResource("2_jll8d")
+texture_progress = ExtResource("3_y2ftd")
+script = ExtResource("4_jll8d")

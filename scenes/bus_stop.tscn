@@ -9,7 +9,7 @@ size = Vector3(1.3001099, 1.7179565, 1.3235474)
 [node name="bus_station" type="Area3D" unique_id=1090984949]
 script = ExtResource("1_nbpj8")
 can_interact = true
-ui_text = "сесть на автобус"
+ui_text = "Е, чтобы сесть на автобус"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=57552526]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82821655, 0.8658142, -0.077423096)

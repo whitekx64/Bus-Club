@@ -22,16 +22,48 @@ func _input(event):
 		$campivot.rotate_y(-event.relative.x * sensitivity)
 		$campivot/SpringArm3D.rotate_x(-event.relative.y * sensitivity)
 		$campivot/SpringArm3D.rotation.x = clamp($campivot/SpringArm3D.rotation.x, deg_to_rad(-60), deg_to_rad(60))
+# Захватить/отпустить мышку
+	if event.is_action_released("esc") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	elif event.is_action_released("esc"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+# Зум
+	if event.is_action_released("zoom"):
+		tar_zoom = clamp(tar_zoom - 0.2, 1.5, 3)
+	if event.is_action_released("zoom_out"):
+		tar_zoom = clamp(tar_zoom + 0.2, 1.5, 3)
 
+# Интеракт
+	if event.is_action_released("interact"):
+		var areas = $InteractArea3D.get_overlapping_areas()
+		for i in areas:
+			if i is Interactable and i.can_interact:
+				i.interact()
+				break
+
+# Дебаг
+	if event.is_action_released("ui_up"):
+		GlobalEvent.player_change_hp.emit(5)
+	if event.is_action_released("ui_down"):
+		GlobalEvent.player_change_hp.emit(-5)
+	if event.is_action_released("ui_right"):
+		GlobalEvent.player_change_money.emit(100)
+	if event.is_action_released("ui_left"):
+		GlobalEvent.player_change_money.emit(-100)
+	if event.is_action_released("ui_graph_delete"):
+		GlobalEvent.player_change_hunger.emit(10)
 
 func land():
 	slowdown = true
 	anim_tree.travel("jump_end")
 	await get_tree().create_timer(0.5).timeout
 	slowdown = false
+	GameState.can_restore_stamina = true
 
 func _physics_process(delta):
 	var horisontal_speed = Vector2(velocity.x, velocity.z).length()
+	
 	if is_on_floor() and was_in_air:
 		land()
 	was_in_air = not is_on_floor()
@@ -46,17 +78,29 @@ func _physics_process(delta):
 		velocity.y -= 9.8 * delta
 
 	# Прыжок
-	if Input.is_action_just_pressed("jump") and is_on_floor() and can_move:
+	if Input.is_action_just_pressed("jump") and is_on_floor() and can_move and GameState.stamina >= 15:
 		anim_tree.travel("jump_start")
 		slowdown = true
 		await get_tree().create_timer(0.36).timeout
 		slowdown = false
+		GameState.can_restore_stamina = false
 		if is_on_floor():
 			velocity.y = jump
+			GlobalEvent.player_change_stamina.emit(-10)
 
 	# Скорость тип
-	var sprint_mode = 2.0 if Input.is_action_pressed("sprint") else 1.0
 	var slow_mode = 0.5 if slowdown else 1.0
+	var sprint_mode
+	if Input.is_action_pressed("sprint"):
+		if horisontal_speed >= 1 and GameState.stamina > 0:
+			GlobalEvent.player_change_stamina.emit(-5 * delta)
+			sprint_mode = 2.0
+		else:
+			sprint_mode = 1.0
+	else:
+		sprint_mode = 1.0
+	GameState.can_restore_stamina = false if Input.is_action_pressed("sprint") else true
+	
 	speed = standart_speed * sprint_mode * slow_mode
 
 	# Регистрация нажатия и типа отработка угла поворота модельки
@@ -83,26 +127,8 @@ func _physics_process(delta):
 
 func _process(delta: float) -> void:
 	#Зум
-	if Input.is_action_just_released("zoom"):
-		tar_zoom = clamp(tar_zoom - 0.2, 1.5, 3)
-	if Input.is_action_just_released("zoom_out"):
-		tar_zoom = clamp(tar_zoom + 0.2, 1.5, 3)
 	$campivot/SpringArm3D.spring_length = lerp($campivot/SpringArm3D.spring_length, tar_zoom, 5.0 * delta)
 
-#Захватить/отпустить мышку
-	if Input.is_action_just_released("esc") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
-	elif Input.is_action_just_released("esc"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-	if Input.is_action_just_released("interact"):
-		var areas = $InteractArea3D.get_overlapping_areas()
-		for i in areas:
-			if i is Interactable and i.can_interact:
-				i.interact()
-				break
-	
 	if $InteractArea3D.get_overlapping_areas():
 		var areas = $InteractArea3D.get_overlapping_areas()
 		for i in areas:

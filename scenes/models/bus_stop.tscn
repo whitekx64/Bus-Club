@@ -48,5 +48,5 @@ shadow_mesh = SubResource("ArrayMesh_cl4nl")
 
 [node name="blockbench_export" unique_id=1415454752 instance=ExtResource("1_iytxn")]
 
-[node name="mesh3" parent="." index="2" unique_id=2035194334]
+[node name="mesh3" parent="." index="2" unique_id=1454427232]
 mesh = SubResource("ArrayMesh_vdgfy")

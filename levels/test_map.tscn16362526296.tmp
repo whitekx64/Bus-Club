@@ -81,7 +81,7 @@ use_collision = true
 size = Vector3(1, 0.30670166, 1)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=1871984946]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6813717, 1.2693074, -3.2175827)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3410316, 0.9819381, -3.2175827)
 cast_shadow = 0
 use_collision = true
 size = Vector3(1, 0.30670166, 1)

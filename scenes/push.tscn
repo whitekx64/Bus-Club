@@ -2,13 +2,12 @@
 
 [ext_resource type="Script" uid="uid://ta8iky86g8i" path="res://scripts/push.gd" id="1_36y4c"]
 [ext_resource type="FontFile" uid="uid://bcdwvuxyss8wr" path="res://fonts/PressStart2P-Regular.ttf" id="1_b2ctu"]
-[ext_resource type="Texture2D" uid="uid://tng0gnk767ef" path="res://sprites/push_back.png" id="2_v73ju"]
-[ext_resource type="Texture2D" uid="uid://0r51quf64oth" path="res://sprites/e_button.png" id="3_ugv5i"]
+[ext_resource type="Texture2D" uid="uid://d2hoadiqcvowh" path="res://sprites/ui/push_back2.png" id="3_ugv5i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b2ctu"]
 font = ExtResource("1_b2ctu")
-font_color = Color(0.5568628, 0.5921569, 0.6117647, 1)
-shadow_color = Color(0.13333334, 0.1764706, 0.29411766, 1)
+font_color = Color(0.9848743, 0.9373835, 0.8578986, 1)
+shadow_color = Color(0.5459033, 0.41560957, 0.16779992, 1)
 
 [node name="push" type="Control" unique_id=1215737458]
 layout_mode = 3
@@ -19,22 +18,20 @@ pivot_offset = Vector2(158, 39.5)
 size_flags_horizontal = 4
 script = ExtResource("1_36y4c")
 
-[node name="PushBack" type="Sprite2D" parent="." unique_id=1383685860]
-position = Vector2(158, 39.525)
-scale = Vector2(2.46875, 2.46875)
-texture = ExtResource("2_v73ju")
-
-[node name="EButton" type="Sprite2D" parent="." unique_id=729898878]
-position = Vector2(38, 39.5)
-scale = Vector2(2, 2)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2133925511]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("3_ugv5i")
 
 [node name="Label" type="Label" parent="." unique_id=439177893]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 7.5
-offset_right = 288.0
-offset_bottom = 71.5
+offset_left = 5.0
+offset_top = 50.0
+offset_right = 315.0
+offset_bottom = 110.0
+text = "asdasdasdasdasdasdsa"
 label_settings = SubResource("LabelSettings_b2ctu")
 horizontal_alignment = 1
 vertical_alignment = 1

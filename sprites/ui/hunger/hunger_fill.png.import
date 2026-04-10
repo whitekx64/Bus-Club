@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tng0gnk767ef"
-path="res://.godot/imported/push_back.png-d9741ba022711c783006cee228da9f76.ctex"
+uid="uid://cfvys4grii4hm"
+path="res://.godot/imported/hunger_fill.png-07d9edcbcdeb892f7b7be0e66fec154e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/push_back.png"
-dest_files=["res://.godot/imported/push_back.png-d9741ba022711c783006cee228da9f76.ctex"]
+source_file="res://sprites/ui/hunger/hunger_fill.png"
+dest_files=["res://.godot/imported/hunger_fill.png-07d9edcbcdeb892f7b7be0e66fec154e.ctex"]
 
 [params]
 
