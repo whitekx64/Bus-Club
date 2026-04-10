@@ -92,7 +92,7 @@ _data = {
 [node name="door" type="Area3D" unique_id=1362464736]
 script = ExtResource("1_cemll")
 can_interact = true
-ui_text = "открыть дверь"
+ui_text = "Е, чтобы открыть дверь"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=677201195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029174805, 0.81422424, 0)
