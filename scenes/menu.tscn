@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bic5vfvulebwp"]
+
+[ext_resource type="PackedScene" uid="uid://b1v1fbq7jsorp" path="res://scenes/menu_button.tscn" id="1_vjb58"]
+[ext_resource type="PackedScene" uid="uid://ietuiqsf5uhw" path="res://scenes/menu_motya.tscn" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://ccaervp3w2arr" path="res://sprites/Godot_icon.svg.png" id="3_con2f"]
+[ext_resource type="PackedScene" uid="uid://cjx0ued465s87" path="res://scenes/tg_button.tscn" id="4_mhnvy"]
+[ext_resource type="PackedScene" uid="uid://bnj82iqw27g0x" path="res://scenes/yt_button.tscn" id="5_4ytvr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yqeox"]
+sky_top_color = Color(0.9254902, 0.69411767, 0.2901961, 1)
+sky_horizon_color = Color(0.9254902, 0.69411767, 0.2901961, 1)
+ground_bottom_color = Color(0.97512656, 0.7838802, 0.47637463, 1)
+ground_horizon_color = Color(0.9254902, 0.69411767, 0.2901961, 1)
+
+[sub_resource type="Sky" id="Sky_3huin"]
+sky_material = SubResource("ProceduralSkyMaterial_yqeox")
+
+[sub_resource type="Environment" id="Environment_vjb58"]
+background_mode = 2
+sky = SubResource("Sky_3huin")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+adjustment_enabled = true
+
+[node name="menu" type="Node3D" unique_id=1954982791]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2053704128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1.4336171)
+
+[node name="menu_motya" parent="." unique_id=1304671327 instance=ExtResource("1_yqeox")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.594, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=885030455]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1355081487]
+environment = SubResource("Environment_vjb58")
+
+[node name="menu_button" parent="." unique_id=1738495186 instance=ExtResource("1_vjb58")]
+offset_left = 151.99997
+offset_top = 394.0
+offset_right = 471.99997
+offset_bottom = 554.0
+current_type = 0
+
+[node name="menu_button2" parent="." unique_id=1896570057 instance=ExtResource("1_vjb58")]
+offset_left = 151.99997
+offset_top = 594.0
+offset_right = 471.99997
+offset_bottom = 754.0
+
+[node name="menu_button3" parent="." unique_id=1123835043 instance=ExtResource("1_vjb58")]
+offset_left = 151.99997
+offset_top = 794.0
+offset_right = 471.99997
+offset_bottom = 954.0
+current_type = 2
+
+[node name="GodotIcon_svg" type="Sprite2D" parent="." unique_id=2131196036]
+position = Vector2(312, 232.99998)
+scale = Vector2(0.87336206, 0.5212969)
+texture = ExtResource("3_con2f")
+
+[node name="TextureButton" parent="." unique_id=1142749204 instance=ExtResource("4_mhnvy")]
+offset_left = 1651.0001
+offset_top = 76.0
+offset_right = 1683.0001
+offset_bottom = 108.0
+
+[node name="yt_button" parent="." unique_id=547511201 instance=ExtResource("5_4ytvr")]
+offset_left = 1730.0001
+offset_top = 44.0
+offset_right = 1762.0001
+offset_bottom = 76.0

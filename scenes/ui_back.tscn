@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://reh6vr52fip5"]
 
-[ext_resource type="Script" uid="uid://cff4kxprcktsy" path="res://scripts/ui_back.gd" id="1_cehss"]
+[ext_resource type="Script" uid="uid://cff4kxprcktsy" path="res://scripts/ui/hud/ui_back.gd" id="1_cehss"]
 [ext_resource type="Texture2D" uid="uid://bg7busuyw5l8k" path="res://sprites/ui/ui_back.png" id="1_dbnun"]
 [ext_resource type="PackedScene" uid="uid://b3c6l5ynae8y5" path="res://scenes/stamina_progress_bar.tscn" id="2_37kcv"]
 [ext_resource type="PackedScene" uid="uid://cxyvuq4r6ve46" path="res://scenes/money_label.tscn" id="3_37kcv"]

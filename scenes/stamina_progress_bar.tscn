@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dqxjf14e38oxs" path="res://sprites/ui/stamina/stamina_under.png" id="1_diqro"]
 [ext_resource type="Texture2D" uid="uid://c7lisbf0suy0m" path="res://sprites/ui/stamina/stamina_outline.png" id="2_0acly"]
 [ext_resource type="Texture2D" uid="uid://cc7gv585bjeh" path="res://sprites/ui/stamina/stamina_fill.png" id="3_o7lvr"]
-[ext_resource type="Script" uid="uid://g88rix2lvxd5" path="res://scripts/stamina_bar.gd" id="4_pmsyt"]
+[ext_resource type="Script" uid="uid://g88rix2lvxd5" path="res://scripts/ui/hud/stamina_bar.gd" id="4_pmsyt"]
 
 [node name="stamina_bar" type="TextureProgressBar" unique_id=703200691]
 offset_right = 64.0

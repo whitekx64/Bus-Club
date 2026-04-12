@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bnj82iqw27g0x"]
+
+[ext_resource type="Texture2D" uid="uid://cpxu7fy32q8ci" path="res://sprites/ui/link_button/link_button-export.png" id="1_xqmvb"]
+[ext_resource type="Texture2D" uid="uid://q5xbeuotasou" path="res://sprites/ui/link_button/yt_button_out-export.png" id="2_7b84f"]
+[ext_resource type="Script" uid="uid://dlnx02rmq2q72" path="res://scripts/ui/menu/yt_button.gd" id="3_7b84f"]
+
+[node name="yt_button" type="TextureButton" unique_id=547511201]
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("1_xqmvb")
+texture_hover = ExtResource("2_7b84f")
+script = ExtResource("3_7b84f")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

@@ -7,24 +7,31 @@
 [ext_resource type="PackedScene" uid="uid://dryel320mbbx7" path="res://models/Motya/meow2.glb" id="5_u3ffk"]
 [ext_resource type="Texture2D" uid="uid://lu6gsrl11nu5" path="res://sprites/photo_2026-03-28_18-52-40.jpg" id="6_u3ffk"]
 
-[sub_resource type="Environment" id="Environment_ehwo5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3ffk"]
+albedo_color = Color(0.37769845, 0.17639026, 0.082033284, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3huin"]
+albedo_color = Color(0.25490198, 0.5411765, 0.28627452, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u3ffk"]
+sky_top_color = Color(0.19959903, 0.75542766, 0.82169664, 1)
+sky_horizon_color = Color(0.47255588, 0.84641904, 0.9453576, 1)
+ground_bottom_color = Color(0.4745098, 0.84705883, 0.94509804, 1)
+ground_horizon_color = Color(0.4745098, 0.84705883, 0.94509804, 1)
+
+[sub_resource type="Sky" id="Sky_lki8d"]
+sky_material = SubResource("ProceduralSkyMaterial_u3ffk")
+
+[sub_resource type="Environment" id="Environment_lki8d"]
+background_mode = 2
+sky = SubResource("Sky_lki8d")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
-tonemap_mode = 3
 adjustment_enabled = true
-adjustment_saturation = 1.2
 
 [node name="test_map" type="Node3D" unique_id=1983730327]
 
 [node name="UI" parent="." unique_id=98024887 instance=ExtResource("1_u3ffk")]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1991908026]
-transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 0, 0)
-shadow_enabled = true
-directional_shadow_max_distance = 1.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1038650949]
-environment = SubResource("Environment_ehwo5")
 
 [node name="CharacterBody3D" parent="." unique_id=644852730 instance=ExtResource("1_772xm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.126128, 0.13607681, 5.6744776)
@@ -37,42 +44,50 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.62228596, -5.0906076, 1.133235
 cast_shadow = 0
 use_collision = true
 size = Vector3(0.38085938, 2.8730469, 8.15918)
+material = SubResource("StandardMaterial3D_u3ffk")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D2" unique_id=953496548]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.725014, 0, 0)
 use_collision = true
 size = Vector3(0.38085938, 2.8730469, 8.15918)
+material = SubResource("StandardMaterial3D_u3ffk")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D2/CSGBox3D3" unique_id=608971487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.6069783, 0.22032976, -0.41060185, 0.20079872)
 operation = 2
 size = Vector3(1.2905273, 1.6663666, 1.0041199)
+material = SubResource("StandardMaterial3D_u3ffk")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D2" unique_id=1142596594]
 transform = Transform3D(-4.371139e-08, 0, -0.62228596, 0, 1, 0, 1.6069783, 0, -4.371139e-08, 2.3851237, 0, -3.7571716)
 use_collision = true
 size = Vector3(0.38085938, 2.8730469, 7.4902344)
+material = SubResource("StandardMaterial3D_u3ffk")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D2" unique_id=1142057118]
 transform = Transform3D(-4.371139e-08, 0, -0.62228596, 0, 1, 0, 1.6069783, 0, -4.371139e-08, 2.3851237, 0, 3.7201831)
 use_collision = true
 size = Vector3(0.38085938, 2.8730469, 7.4902344)
+material = SubResource("StandardMaterial3D_u3ffk")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGBox3D2" unique_id=294317267]
 transform = Transform3D(-4.3711385e-08, 0, -0.62228596, 0.86602545, 0.49999997, -2.3556742e-08, 0.8034891, -1.391684, -2.1855694e-08, 2.3851237, 2.021323, 2.6481771)
 use_collision = true
 size = Vector3(0.38085938, 3.550354, 7.4902344)
+material = SubResource("StandardMaterial3D_u3ffk")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGBox3D2" unique_id=1627644107]
 transform = Transform3D(8.195639e-08, -8.940697e-08, 0.62228596, 0.8660254, 0.49999994, -2.4721427e-08, -0.803489, 1.391684, 1.4367505e-07, 2.3851237, 2.021323, -2.1727579)
 use_collision = true
 size = Vector3(0.38085938, 3.550354, 7.4902344)
+material = SubResource("StandardMaterial3D_u3ffk")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1667062870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.277405, -0.2868042, 0.8711548)
 cast_shadow = 0
 use_collision = true
 size = Vector3(24.097534, 0.4263916, 16.2052)
+material = SubResource("StandardMaterial3D_3huin")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=617476448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7077408, 0.80213, -2.6324098)
@@ -139,5 +154,13 @@ transform = Transform3D(-3.295, 0, 5.7071075, 0, 6.59, 0, -5.7071075, 0, -3.295,
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=585997889]
 transform = Transform3D(0.243, 0, 0, 0, 0.243, 0, 0, 0, 0.243, -3.3494124, 0.9192401, 0.006181121)
-billboard = 1
+billboard = 2
 texture = ExtResource("6_u3ffk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1910449737]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=923667827]
+environment = SubResource("Environment_lki8d")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bn8fhwycjwkt1"]
 
-[ext_resource type="Script" uid="uid://dbq2866p13oub" path="res://scripts/door.gd" id="1_cemll"]
+[ext_resource type="Script" uid="uid://dbq2866p13oub" path="res://scripts/door/door.gd" id="1_cemll"]
 [ext_resource type="PackedScene" uid="uid://d1s1nll44ahi7" path="res://models/Door/doormodel.tscn" id="2_uvdjg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l1f6y"]

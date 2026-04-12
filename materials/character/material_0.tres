@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://ci0iejtg5glpc"]
 
 [ext_resource type="Texture2D" uid="uid://bhyqp441g1ky7" path="res://models/Motya/meow2_0.png" id="1_dgewk"]
-[ext_resource type="Shader" uid="uid://c7t8fhl8s5det" path="res://scripts/outline.gdshader" id="2_rttyv"]
+[ext_resource type="Shader" uid="uid://c7t8fhl8s5det" path="res://shaders/outline.gdshader" id="2_rttyv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m42yk"]
 render_priority = 0

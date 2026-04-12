@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cjx0ued465s87"]
+
+[ext_resource type="Texture2D" uid="uid://c5jho4t7qfbj7" path="res://sprites/ui/link_button/tgt_buttont_out-export.png" id="1_tbqa8"]
+[ext_resource type="Texture2D" uid="uid://cvtlof7fgwyj1" path="res://sprites/ui/link_button/tgt_buttont-export.png" id="2_c2p1r"]
+[ext_resource type="Script" uid="uid://cjlh5jbtpgd1n" path="res://scripts/ui/menu/tg_button.gd" id="3_tbqa8"]
+
+[node name="TextureButton" type="TextureButton" unique_id=1142749204]
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(3, 3)
+pivot_offset = Vector2(16, 16)
+texture_normal = ExtResource("1_tbqa8")
+texture_hover = ExtResource("2_c2p1r")
+script = ExtResource("3_tbqa8")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

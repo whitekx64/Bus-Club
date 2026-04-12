@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://633bcupctxv1"]
 
 [ext_resource type="PackedScene" uid="uid://dmq0eysbo3uwj" path="res://scenes/models/bus_stop.tscn" id="1_jt85a"]
-[ext_resource type="Script" uid="uid://mb6hyvbad2h0" path="res://scripts/bus_stop.gd" id="1_nbpj8"]
+[ext_resource type="Script" uid="uid://mb6hyvbad2h0" path="res://scripts/bus_stop/bus_stop.gd" id="1_nbpj8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nbpj8"]
 size = Vector3(1.3001099, 1.7179565, 1.3235474)

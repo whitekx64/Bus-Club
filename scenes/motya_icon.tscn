@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://qxxfxlwmlq2b"]
 
 [ext_resource type="Texture2D" uid="uid://bxpnrvlwiku8q" path="res://sprites/ui/mini_motya2.png" id="2_1md5x"]
-[ext_resource type="Script" uid="uid://b7ipqq0i4pe7o" path="res://scripts/motya_icon.gd" id="2_kpxop"]
+[ext_resource type="Script" uid="uid://b7ipqq0i4pe7o" path="res://scripts/ui/hud/motya_icon.gd" id="2_kpxop"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oarjd"]
 atlas = ExtResource("2_1md5x")

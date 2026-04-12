@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://f2prrvndvs04"]
 
-[ext_resource type="Script" uid="uid://cpn38ia5nok28" path="res://scripts/select_location.gd" id="1_s2h3t"]
+[ext_resource type="Script" uid="uid://cpn38ia5nok28" path="res://scripts/ui/select_location.gd" id="1_s2h3t"]
 
 [sub_resource type="SystemFont" id="SystemFont_er37s"]
 font_names = PackedStringArray("Impact")
