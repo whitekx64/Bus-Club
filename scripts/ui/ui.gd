@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var loc_ui = preload("res://scenes/select_location.tscn")
+var loc_ui = preload("res://scenes/ui/select_location.tscn")
 var loc_ui_stat = false
 
 func _ready() -> void:

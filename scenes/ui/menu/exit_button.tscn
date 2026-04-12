@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b83rhb8kw1wlu"]
+
+[ext_resource type="Texture2D" uid="uid://dpjerejy2sgo7" path="res://sprites/ui/close/close.png" id="1_k8tm2"]
+[ext_resource type="Texture2D" uid="uid://bhiryd0ttxfbb" path="res://sprites/ui/close/close_out.png" id="2_axm1l"]
+[ext_resource type="Script" uid="uid://blu2vj6tc6stq" path="res://scripts/ui/menu/exit_button.gd" id="3_axm1l"]
+
+[node name="ExitButton" type="TextureButton" unique_id=1586298412]
+offset_right = 32.0
+offset_bottom = 32.0
+pivot_offset = Vector2(16, 16)
+texture_normal = ExtResource("1_k8tm2")
+texture_hover = ExtResource("2_axm1l")
+script = ExtResource("3_axm1l")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

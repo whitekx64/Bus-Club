@@ -21,3 +21,9 @@ func _on_button_up() -> void:
 
 func _on_button_down() -> void:
 	scale = Vector2(0.9, 0.9)
+	
+	match current_type:
+		Type.NEW_GAME:
+			get_tree().change_scene_to_file("res://levels/test_map.tscn")
+		Type.SETTINGS:
+			get_tree().change_scene_to_file("res://scenes/ui/settings/settings.tscn")

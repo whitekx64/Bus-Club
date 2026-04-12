@@ -8,6 +8,7 @@
 offset_right = 32.0
 offset_bottom = 32.0
 scale = Vector2(3, 3)
+pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("1_xqmvb")
 texture_hover = ExtResource("2_7b84f")
 script = ExtResource("3_7b84f")

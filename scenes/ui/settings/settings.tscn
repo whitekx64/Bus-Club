@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cfuv86t46ium4"]
+
+[ext_resource type="Texture2D" uid="uid://bis1qitd2flpy" path="res://sprites/Screenshot 2026-03-31 153209.png" id="1_1m5ku"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vfssy"]
+sky_top_color = Color(0.9254902, 0.69411767, 0.2901961, 1)
+sky_horizon_color = Color(0.9254902, 0.69411767, 0.2901961, 1)
+ground_bottom_color = Color(0.97512656, 0.7838802, 0.47637463, 1)
+ground_horizon_color = Color(0.9254902, 0.69411767, 0.2901961, 1)
+
+[sub_resource type="Sky" id="Sky_3huin"]
+sky_material = SubResource("ProceduralSkyMaterial_vfssy")
+
+[sub_resource type="Environment" id="Environment_1m5ku"]
+background_mode = 2
+sky = SubResource("Sky_3huin")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+adjustment_enabled = true
+
+[node name="settings" type="Node3D" unique_id=372836626]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1104664153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1.4336171)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1646545906]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1981533883]
+environment = SubResource("Environment_1m5ku")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=812028929]
+transform = Transform3D(2.0616355, 0, 0, 0, 0.41757727, 0, 0, 0, 1, 0, 0, -2.6709127)
+texture = ExtResource("1_1m5ku")
